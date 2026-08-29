@@ -36,6 +36,7 @@
 
 # Executables
 *.exe
+*.dll
 *.out
 *.app
 
@@ -43,6 +44,8 @@
 build/
 Build/
 build-*/
+Debug/
+Release/
 
 # CMake generated files
 CMakeFiles/
@@ -57,13 +60,24 @@ compile_commands.json
 *.log
 *.bak
 *.swp
+*.ipch
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
 
 # vcpkg
 vcpkg_installed/
 
 # debug information files
 *.dwo
+*.pdb
 
 # test output & cache
 Testing/
 .cache/
+
+
+imgui.ini
