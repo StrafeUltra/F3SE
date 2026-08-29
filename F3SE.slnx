@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="F3SE/F3SE.vcxproj" Id="79ac511a-962e-4594-b0ba-cd8b7a8857a0" />
+  <Project Path="F3SE_Launcher/F3SE_Launcher.vcxproj" Id="b283cf5c-6bfa-4f4f-b24b-1d548047337e" />
+</Solution>
