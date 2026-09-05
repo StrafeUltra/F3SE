@@ -9,6 +9,8 @@
 * The launch chain is basically F3SE_Launcher.exe -> FableLauncher.exe -> F3Secu.exe -> Fable3.exe
 * After we launch FableLauncher.exe we wait until the main Fable3.exe child process is available
 * at which point we inject our DLL into it using standard injection
+* 
+* Now checks to see if my SecuROM PA emulator is present during launch if so we launch that instead of the usual chain
 */
 
 std::filesystem::path GetExeDir()
@@ -134,6 +136,7 @@ std::uint32_t LaunchAndInject()
 
 	const std::filesystem::path launcher = root / LauncherExe;
 	const std::filesystem::path dll = root / DLLName;
+	const std::filesystem::path spaemu = root / SecuROMIPCEmulator;
 
 	if (!std::filesystem::is_regular_file(launcher) || !std::filesystem::is_regular_file(dll))
 		return {};
@@ -145,8 +148,17 @@ std::uint32_t LaunchAndInject()
 		return {};
 	}
 
-	if (!StartLauncher(root, launcher))
-		return {};
+
+	if (!std::filesystem::is_regular_file(spaemu))
+	{
+		if (!StartLauncher(root, launcher))
+			return {};
+	}
+	else
+	{
+		if (!StartLauncher(root, spaemu))
+			return {};
+	}
 
 	const auto deadline = std::chrono::steady_clock::now() + std::chrono::milliseconds(TimeoutMS);
 

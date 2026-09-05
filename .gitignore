@@ -67,6 +67,7 @@ compile_commands.json
 *.opensdf
 *.VC.db
 *.VC.opendb
+.vs/
 
 # vcpkg
 vcpkg_installed/

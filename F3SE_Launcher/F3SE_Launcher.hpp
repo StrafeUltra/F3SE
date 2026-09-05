@@ -17,6 +17,7 @@
 constexpr std::string_view LauncherExe = "FableLauncher.exe";
 constexpr std::string_view TargetExe = "Fable3.exe";
 constexpr std::string_view DLLName = "F3SE.dll";
+constexpr std::string_view SecuROMIPCEmulator = "F3SecuromPAless.exe";
 constexpr std::uint32_t TimeoutMS = 120000;
 constexpr std::uint32_t PollMS = 100;
 
