@@ -177,7 +177,7 @@ std::uint32_t LaunchAndInject()
 	return {};
 }
 
-int main()
+BOOL WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmd, int argc)
 {
 	const auto pid = LaunchAndInject();
 
