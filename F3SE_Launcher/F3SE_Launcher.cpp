@@ -138,7 +138,7 @@ std::uint32_t LaunchAndInject()
 	const std::filesystem::path dll = root / DLLName;
 	const std::filesystem::path spaemu = root / SecuROMIPCEmulator;
 
-	if (!std::filesystem::is_regular_file(launcher) || !std::filesystem::is_regular_file(dll))
+	if (!std::filesystem::is_regular_file(dll))
 		return {};
 
 	if (auto existing = FindPid(TargetExe))
